@@ -1,0 +1,34 @@
+<!--<h2><a routerLink="/tac-gia/{{story.Author.Slug}}">{{story.Author.AuthorName}} </a>| <app-star [score]="story.Score" [rateCount]="story.RateCount"></app-star></h2>-->
+
+
+<md-input-container> <input mdInput #myInput placeholder="Search..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="getStoriesByAuthor()">
+</md-input-container>
+<md-icon>search</md-icon>
+<div *ngIf="show">
+    <div *ngFor="let story of stories">
+        {{story.storyName}}
+    </div>
+</div>
+<div *ngIf="!show">
+    <div class="col-xs-12 col-sm-9">
+        <div class="row">
+            <div class="col-xs-6 col-lg-4" *ngFor="let story of stories">
+                <md-card class="example-card">
+                    <md-card-header>
+                        <div md-card-avatar class="example-header-image"></div>
+                        <md-card-title>{{story.storyName}}</md-card-title>
+                    </md-card-header>
+                    <img md-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                    <md-card-content>
+                        <p>{{story.storyDescription}}</p>
+                    </md-card-content>
+                    <md-card-actions>
+                        <button md-button>LIKE</button>
+                        <button md-button>SHARE</button>
+                    </md-card-actions>
+                </md-card>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div>
+        </div>
+    </div>
+</div>

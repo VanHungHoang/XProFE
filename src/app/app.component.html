@@ -1,3 +1,52 @@
-<h1>
-  {{title}}
-</h1>
+
+    <nav>
+        <div class="tab">
+            <a class="tab-home" routerLink="/">
+                   <i class="material-icons">home</i>
+                    <span>TRANG CHỦ</span>
+                </a>
+                <a class="tab-author" routerLink="/thaoluan"  routerLinkActive="menu-active">
+                    <i class="large material-icons">create</i>
+                    <span>THẢO LUẬN</span>
+                </a>
+                <a class="tab-ranking" routerLink="/bang-xep-hang" routerLinkActive="menu-active">
+                    <i class="large material-icons">equalizer</i>
+                    <span>XẾP HẠNG</span>
+                </a>
+                <a *ngIf="!categoryShow" class="tab-menu" (click)="openMenu()">
+                    <i class="material-icons">view_list</i>
+                    <span>THỂ LOẠI</span>
+                </a>
+                <!--<a *ngIf="categoryShow" class="tab-menu hide-menu" (click)="openMenu()">
+                    <i class="material-icons">clear_all</i>
+                    <span>ẨN MENU</span>
+                </a>
+            <a id="showSidebar" class="tab-menu" (click)="_auth.login()" *ngIf="!_auth.authenticated()">
+                    <i class="material-icons">person_outline</i>
+                    <span>ĐĂNG NHẬP</span>
+                </a>
+                <a id="showSidebar" class="tab-menu" routerLink="/profile" *ngIf="_auth.authenticated()" routerLinkActive="menu-active">
+                    <i class="large material-icons">person</i>
+                    <span>TÀI KHOẢN</span> 
+                </a>-->
+
+            <!--<md-tab-group>
+
+                <md-tab label="THẢO LUẬN">
+                    <a class="tab-home" routerLink="/thaoluan">
+                    </a>
+                </md-tab>
+                <md-tab label="XẾP HẠNG">
+
+                </md-tab>
+                <md-tab label="THỂ LOẠI">
+
+                </md-tab>
+            </md-tab-group>-->
+
+        </div>
+    </nav>
+
+<router-outlet></router-outlet>
+<!--<app-author></app-author>
+<app-home></app-home>-->
