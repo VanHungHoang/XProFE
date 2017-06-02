@@ -1,27 +1,31 @@
-
+<header>
     <nav>
         <div class="tab">
             <a class="tab-home" routerLink="/">
-                   <i class="material-icons">home</i>
-                    <span>TRANG CHỦ</span>
-                </a>
-                <a class="tab-author" routerLink="/thaoluan"  routerLinkActive="menu-active">
-                    <i class="large material-icons">create</i>
-                    <span>THẢO LUẬN</span>
-                </a>
-                <a class="tab-ranking" routerLink="/bang-xep-hang" routerLinkActive="menu-active">
-                    <i class="large material-icons">equalizer</i>
-                    <span>XẾP HẠNG</span>
-                </a>
-                <a *ngIf="!categoryShow" class="tab-menu" (click)="openMenu()">
-                    <i class="material-icons">view_list</i>
-                    <span>THỂ LOẠI</span>
-                </a>
-                <!--<a *ngIf="categoryShow" class="tab-menu hide-menu" (click)="openMenu()">
-                    <i class="material-icons">clear_all</i>
-                    <span>ẨN MENU</span>
-                </a>
-            <a id="showSidebar" class="tab-menu" (click)="_auth.login()" *ngIf="!_auth.authenticated()">
+                <i class="material-icons">home</i>
+                <span>TRANG CHỦ</span>
+            </a>
+            <a class="tab-author" routerLink="/thao-luan" routerLinkActive="menu-active">
+                <i class="large material-icons">create</i>
+                <span>THẢO LUẬN</span>
+            </a>
+            <a class="tab-ranking" routerLink="/bang-xep-hang" routerLinkActive="menu-active">
+                <i class="large material-icons">equalizer</i>
+                <span>XẾP HẠNG</span>
+            </a>
+            <a *ngIf="!categoryShow" class="tab-menu" (mouseenter)="openMenu()">
+                <i class="material-icons">view_list</i>
+                <span>THỂ LOẠI</span>
+            </a>
+            <a *ngIf="categoryShow" class="tab-menu hide-menu" (mouseleave)="closeMenu()">
+                <i class="material-icons">clear_all</i>
+                <span>ẨN MENU</span>
+                <div>
+                    <a *ngFor="let genre of genres" [routerLink]="['/thao-luan', genre.slug]" (click)="showStoryByGenre($event)">{{genre.genreName}}</a>
+
+                </div>
+            </a>
+            <!--<a id="showSidebar" class="tab-menu" (click)="_auth.login()" *ngIf="!_auth.authenticated()">
                     <i class="material-icons">person_outline</i>
                     <span>ĐĂNG NHẬP</span>
                 </a>
@@ -46,7 +50,8 @@
 
         </div>
     </nav>
-
+</header>
+<app-author></app-author>
 <router-outlet></router-outlet>
-<!--<app-author></app-author>
-<app-home></app-home>-->
+
+<!--<app-home></app-home>-->

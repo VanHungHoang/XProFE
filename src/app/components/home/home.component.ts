@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Story } from '../../models/story.model';
 import { ApiService } from '../../services/api.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',

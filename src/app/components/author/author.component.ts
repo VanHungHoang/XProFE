@@ -1,9 +1,11 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Story } from "app/models/story.model";
+
 import { ApiService } from "../../services/api.service";
 import {SlugService} from "../../services/slug.service";
+
 import { Author } from "../../models/author.model";
+import { Story } from "app/models/story.model";
 
 @Component({
   selector: 'app-author',
